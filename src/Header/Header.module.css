@@ -364,27 +364,16 @@
 
 .logoutBtn {
   display: flex;
-
   align-items: center;
-
   gap: 8px;
-
   background-color: transparent;
-
   border: 1px solid #86efac;
-
   color: #16a34a;
-
   padding: 8px 16px;
-
   border-radius: 8px;
-
   font-size: 13px;
-
   font-weight: 600;
-
   cursor: pointer;
-
   transition: all 0.2s ease;
 }
 
@@ -488,6 +477,53 @@
 }
 
 
+
+
+@media (max-width: 650px) {
+
+  .logoArea {
+    gap: 8px;
+  }
+
+  .logoIcon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .logoText strong {
+    font-size: 16px;
+  }
+
+  .headerRight {
+    margin-left: auto;
+    gap: 2px;
+  }
+
+  .logoutBtn {
+    display: flex;
+    padding: 7px 9px;
+    font-size: 11px;
+  }
+
+  .logoutBtn span {
+    display: none;
+  }
+
+  .iconButton {
+    width: 34px;
+    height: 34px;
+  }
+
+  .menuButton {
+    width: 36px;
+    height: 36px;
+    margin-left: 2px;
+  }
+}
+
+
+
+
 /* =========================================================
    MOBILE
 ========================================================= */
@@ -496,7 +532,6 @@
 
   .header {
     top: 10px;
-
     left: 10px;
     right: 10px;
 
@@ -509,30 +544,15 @@
     gap: 0;
   }
 
-
-  /* =========================
-     HAMBURGER
-  ========================= */
-
   .menuButton {
     display: flex;
-
     margin-left: auto;
   }
 
-
-  /* =========================
-     RIGHT SIDE
-  ========================= */
-
   .headerRight {
     margin-left: 7px;
-
     gap: 2px;
   }
-
-
-  /* Hide Online / Offline text */
 
   .connectionStatus {
     padding: 7px;
@@ -542,40 +562,20 @@
     display: none;
   }
 
-
-  /* Hide logout on mobile */
-
-  .logoutBtn {
-    display: none;
-  }
-
-
-  /* =========================
-     NAVIGATION CLOSED
-  ========================= */
+  /* DO NOT HIDE LOGOUT */
 
   .navigation {
     display: none;
   }
 
-
-  /* =========================
-     NAVIGATION OPEN
-     
-     Header increases DOWNWARD
-  ========================= */
-
   .navigationOpen {
     display: flex;
 
     flex-direction: column;
-
     align-items: stretch;
-
     justify-content: flex-start;
 
     flex-basis: 100%;
-
     width: 100%;
 
     margin-top: 12px;
@@ -591,13 +591,8 @@
     animation: openMenu 0.25s ease;
   }
 
-
-  /* Mobile navigation links */
-
   .navigationOpen .navLink {
-
     width: 100%;
-
     height: 44px;
 
     padding: 0 14px;
@@ -613,10 +608,8 @@
     display: inline;
   }
 
-
   .navigationOpen .navLink.active {
     background-color: #16a34a;
-
     color: #ffffff;
   }
 }
