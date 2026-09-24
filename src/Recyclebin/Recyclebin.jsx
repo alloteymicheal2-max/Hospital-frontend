@@ -1,5 +1,5 @@
 import { Search, RotateCcw, Trash, LoaderCircle, UserRound, CalendarDays, AlertTriangle, Trash2 } from "lucide-react";
-import HM from "./RecycleBin.module.css";
+import HM from "./Recyclebin.module.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 // import Patients from "../Patients/Patients";
