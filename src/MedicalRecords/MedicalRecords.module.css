@@ -1,0 +1,1531 @@
+/* =====================================================
+   MEDICAL RECORDS PAGE
+===================================================== */
+
+.medicalRecordsPage {
+  min-height: 100vh;
+  padding: 32px;
+  background: #f7faf8;
+  color: #14201a;
+  font-family:
+    "Segoe UI",
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.headerText {
+  max-width: 700px;
+}
+
+.headerEyebrow {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 8px;
+  color: #16a34a;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.headerText h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 750;
+  letter-spacing: -0.7px;
+}
+
+.headerText p {
+  margin: 8px 0 0;
+  color: #66736b;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+}
+
+.newRecordButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  min-height: 44px;
+  padding: 0 18px;
+
+  border: 0;
+  border-radius: 10px;
+
+  background: #16a34a;
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.newRecordButton:hover {
+  background: #15803d;
+  transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   STAT CARDS
+===================================================== */
+
+.recordStats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.statCard {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 19px;
+
+  background: #ffffff;
+  border: 1px solid #e2e8e5;
+  border-radius: 14px;
+
+  box-shadow: 0 3px 12px rgba(20, 32, 26, 0.04);
+}
+
+.statIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  flex-shrink: 0;
+
+  border-radius: 11px;
+
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.statContent {
+  min-width: 0;
+}
+
+.statContent span {
+  display: block;
+  color: #66736b;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.statContent strong {
+  display: block;
+  margin-top: 2px;
+
+  color: #14201a;
+  font-size: 23px;
+  font-weight: 750;
+}
+
+.statContent small {
+  display: block;
+  margin-top: 2px;
+
+  color: #8a958e;
+  font-size: 11px;
+}
+
+
+/* =====================================================
+   FILTER PANEL
+===================================================== */
+
+.filterPanel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  padding: 16px;
+
+  background: #ffffff;
+  border: 1px solid #e2e8e5;
+  border-radius: 14px;
+
+  margin-bottom: 26px;
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  flex: 1;
+  max-width: 620px;
+
+  height: 43px;
+  padding: 0 13px;
+
+  border: 1px solid #dce5df;
+  border-radius: 9px;
+
+  color: #7b877f;
+  background: #fbfdfc;
+}
+
+.searchBox:focus-within {
+  border-color: #16a34a;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.08);
+}
+
+.searchBox input {
+  width: 100%;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  color: #14201a;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.searchBox input::placeholder {
+  color: #9aa49e;
+}
+
+.filterActions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.filterButton,
+.selectButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  height: 41px;
+  padding: 0 13px;
+
+  border: 1px solid #dce5df;
+  border-radius: 9px;
+
+  background: #ffffff;
+  color: #344139;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 650;
+
+  cursor: pointer;
+}
+
+.filterButton:hover,
+.selectButton:hover {
+  border-color: #16a34a;
+  color: #16a34a;
+}
+
+
+/* =====================================================
+   RECORDS HEADER
+===================================================== */
+
+.recordsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 14px;
+}
+
+.recordsHeader h2 {
+  margin: 0;
+
+  font-size: 19px;
+  font-weight: 750;
+}
+
+.recordsHeader p {
+  margin: 4px 0 0;
+
+  color: #7b877f;
+  font-size: 13px;
+}
+
+.recordsCount {
+  color: #66736b;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* =====================================================
+   RECORDS
+===================================================== */
+
+.recordsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.recordCard {
+  display: grid;
+  grid-template-columns: 70px minmax(190px, 1.2fr) minmax(320px, 2fr) 120px 135px;
+  align-items: center;
+  gap: 20px;
+
+  min-height: 100px;
+  padding: 15px 18px;
+
+  background: #ffffff;
+  border: 1px solid #e2e8e5;
+  border-radius: 13px;
+
+  transition: 0.2s ease;
+}
+
+.recordCard:hover {
+  border-color: #b7d9c1;
+  box-shadow: 0 6px 18px rgba(20, 32, 26, 0.06);
+  transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   DATE
+===================================================== */
+
+.recordDate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 58px;
+  height: 68px;
+
+  border-radius: 10px;
+
+  background: #f0fdf4;
+  border: 1px solid #dcfce7;
+}
+
+.recordDate span {
+  color: #16a34a;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.recordDate strong {
+  margin-top: 1px;
+
+  color: #14201a;
+  font-size: 21px;
+  line-height: 1;
+}
+
+.recordDate small {
+  margin-top: 3px;
+
+  color: #7b877f;
+  font-size: 10px;
+}
+
+
+/* =====================================================
+   PATIENT
+===================================================== */
+
+.patientInfo {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 0;
+}
+
+.patientAvatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #16a34a;
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.patientInfo h3 {
+  margin: 0;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.patientInfo p {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  margin: 4px 0 0;
+
+  color: #7b877f;
+  font-size: 11px;
+}
+
+
+/* =====================================================
+   RECORD INFO
+===================================================== */
+
+.recordInfo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.infoItem span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #8a958e;
+  font-size: 10px;
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.infoItem strong {
+  display: block;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  color: #29362e;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  width: fit-content;
+
+  padding: 7px 9px;
+
+  border-radius: 20px;
+
+  background: #dcfce7;
+  color: #15803d;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.statusPending {
+  background: #fef3c7;
+  color: #a16207;
+}
+
+
+/* =====================================================
+   VIEW BUTTON
+===================================================== */
+
+.viewButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  height: 38px;
+  padding: 0 12px;
+
+  border: 1px solid #b7d9c1;
+  border-radius: 8px;
+
+  background: #ffffff;
+  color: #15803d;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.viewButton:hover {
+  background: #16a34a;
+  border-color: #16a34a;
+  color: #ffffff;
+}
+
+
+/* =====================================================
+   PAGINATION
+===================================================== */
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 18px;
+  padding: 14px 3px;
+
+  color: #7b877f;
+  font-size: 12px;
+}
+
+.paginationButtons {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.paginationButtons button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 34px;
+  height: 34px;
+
+  padding: 0 8px;
+
+  border: 1px solid #dce5df;
+  border-radius: 7px;
+
+  background: #ffffff;
+  color: #59665e;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 650;
+
+  cursor: pointer;
+}
+
+.paginationButtons button:hover {
+  border-color: #16a34a;
+  color: #16a34a;
+}
+
+.paginationButtons .activePage {
+  border-color: #16a34a;
+  background: #16a34a;
+  color: #ffffff;
+}
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(15, 23, 18, 0.58);
+}
+
+
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.modal {
+  width: min(100%, 560px);
+  max-height: calc(100vh - 40px);
+
+  overflow: auto;
+
+  background: #ffffff;
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =====================================================
+   MODAL HEADER
+===================================================== */
+
+.modalHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  padding: 22px 22px 18px;
+
+  border-bottom: 1px solid #e8eeea;
+}
+
+.modalTitle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.modalIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 43px;
+  height: 43px;
+
+  flex-shrink: 0;
+
+  border-radius: 11px;
+
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.modalTitle h2 {
+  margin: 0;
+
+  color: #14201a;
+  font-size: 18px;
+  font-weight: 750;
+}
+
+.modalTitle p {
+  margin: 4px 0 0;
+
+  color: #7b877f;
+  font-size: 12px;
+}
+
+.closeModal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 35px;
+  height: 35px;
+
+  border: 0;
+  border-radius: 8px;
+
+  background: #f5f7f6;
+  color: #66736b;
+
+  cursor: pointer;
+}
+
+.closeModal:hover {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+
+/* =====================================================
+   PATIENT FORM
+===================================================== */
+
+.patientForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.formSection {
+  padding: 25px 22px 28px;
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+
+  margin-bottom: 23px;
+}
+
+.sectionNumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  border-radius: 9px;
+
+  background: #16a34a;
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.sectionTitle h3 {
+  margin: 0;
+
+  color: #14201a;
+  font-size: 15px;
+  font-weight: 750;
+}
+
+.sectionTitle p {
+  margin: 4px 0 0;
+
+  color: #7b877f;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+
+/* =====================================================
+   PATIENT SELECTION
+===================================================== */
+
+.patientSelection label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #26342b;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.patientSelection label span {
+  margin-left: 3px;
+  color: #dc2626;
+}
+
+.selectWrapper {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  height: 48px;
+
+  border: 1px solid #d7e1db;
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  color: #7b877f;
+}
+
+.selectWrapper:focus-within {
+  border-color: #16a34a;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.08);
+}
+
+.selectWrapper > svg:first-child {
+  margin-left: 13px;
+  flex-shrink: 0;
+  color: #16a34a;
+}
+
+.selectWrapper select {
+  width: 100%;
+  height: 100%;
+
+  padding: 0 38px 0 10px;
+
+  border: 0;
+  outline: 0;
+
+  appearance: none;
+
+  background: transparent;
+
+  color: #26342b;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.selectWrapper > svg:last-child {
+  position: absolute;
+  right: 13px;
+
+  pointer-events: none;
+}
+
+.patientSelection small {
+  display: block;
+
+  margin-top: 7px;
+
+  color: #8a958e;
+  font-size: 11px;
+}
+
+
+/* =====================================================
+   FORM FOOTER
+===================================================== */
+
+.formFooter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 9px;
+
+  padding: 16px 22px;
+
+  border-top: 1px solid #e8eeea;
+
+  background: #fbfdfc;
+}
+
+.cancelButton,
+.continueButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  height: 41px;
+  padding: 0 15px;
+
+  border-radius: 9px;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.cancelButton {
+  border: 1px solid #dce5df;
+
+  background: #ffffff;
+  color: #59665e;
+}
+
+.cancelButton:hover {
+  border-color: #b7c5bc;
+}
+
+.continueButton {
+  border: 1px solid #16a34a;
+
+  background: #16a34a;
+  color: #ffffff;
+}
+
+.continueButton:hover {
+  background: #15803d;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1200px) {
+
+  .recordCard {
+    grid-template-columns:
+      65px
+      minmax(170px, 1fr)
+      minmax(260px, 1.5fr)
+      105px
+      120px;
+
+    gap: 14px;
+  }
+
+  .recordInfo {
+    gap: 10px;
+  }
+
+}
+
+
+@media (max-width: 1000px) {
+
+  .recordStats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .recordCard {
+    grid-template-columns: 65px 1fr 120px 120px;
+  }
+
+  .recordInfo {
+    grid-column: 2 / 3;
+    grid-row: 2;
+  }
+
+  .status {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .viewButton {
+    grid-column: 4;
+    grid-row: 1;
+  }
+
+}
+
+
+@media (max-width: 760px) {
+
+  .medicalRecordsPage {
+    padding: 20px 15px;
+  }
+
+  .header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .headerText h1 {
+    font-size: 27px;
+  }
+
+  .headerActions {
+    width: 100%;
+  }
+
+/* =========================================
+   NEW RECORD BUTTON
+========================================= */
+
+.newRecordButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  min-height: 44px;
+  padding: 0 18px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: #16a34a;
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.newRecordButton:hover {
+  background: #15803d;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(22, 163, 74, 0.20);
+}
+.newRecordButton:disabled {
+  background: #d1d5db;
+  color: #6b7280;
+
+  cursor: not-allowed;
+
+  opacity: 0.85;
+
+  transform: none;
+
+  box-shadow: none;
+}
+
+.newRecordButton:disabled:hover {
+  background: #d1d5db;
+  color: #6b7280;
+
+  transform: none;
+
+  box-shadow: none;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .newRecordButton {
+    width: 100%;
+    min-height: 46px;
+  }
+}
+
+  .filterPanel {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .searchBox {
+    max-width: none;
+  }
+
+  .filterActions {
+    width: 100%;
+  }
+
+  .filterButton,
+  .selectButton {
+    flex: 1;
+  }
+
+  .recordCard {
+    grid-template-columns: 60px 1fr;
+    gap: 14px;
+    padding: 15px;
+  }
+
+  .recordInfo {
+    grid-column: 1 / -1;
+    grid-row: auto;
+
+    padding-top: 5px;
+
+    border-top: 1px solid #edf1ee;
+  }
+
+  .status {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .viewButton {
+    grid-column: 2;
+    grid-row: auto;
+    justify-self: end;
+  }
+
+  .pagination {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+}
+
+
+@media (max-width: 520px) {
+
+  .recordStats {
+    grid-template-columns: 1fr;
+  }
+
+  .filterActions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .filterButton {
+    grid-column: 1 / -1;
+  }
+
+  .recordInfo {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .recordsHeader {
+    align-items: flex-start;
+    gap: 8px;
+    flex-direction: column;
+  }
+
+  .modalOverlay {
+    padding: 10px;
+  }
+
+  .modal {
+    max-height: calc(100vh - 20px);
+    border-radius: 13px;
+  }
+
+  .modalHeader {
+    padding: 18px 16px 15px;
+  }
+
+  .formSection {
+    padding: 20px 16px 23px;
+  }
+
+  .formFooter {
+    padding: 13px 16px;
+  }
+
+  .cancelButton,
+  .continueButton {
+    flex: 1;
+  }
+
+}
+.noRecords {
+  min-height: 280px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  background: #ffffff;
+  border-radius: 12px;
+}
+
+.noRecordsIcon {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  border-radius: 50%;
+  background: #f0fdf4;
+  color: #16a34a;
+}
+
+.noRecords h3 {
+  margin: 0 0 8px;
+  color: #18352a;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.noRecords p {
+  margin: 0 0 20px;
+  color: #66776e;
+  font-size: 14px;
+}
+
+.noRecords button {
+  padding: 10px 18px;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  background: #f0fdf4;
+  color: #15803d;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.noRecords button:hover {
+  background: #dcfce7;
+}
+
+.successMessage {
+  position: fixed;
+  top: 90px;
+  right: 30px;
+
+  width: 380px;
+  min-height: 80px;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 16px 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #bbf7d0;
+  border-left: 5px solid #16a34a;
+
+  border-radius: 14px;
+
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+
+  z-index: 9999;
+}
+
+.successIcon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.successContent {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.successContent strong {
+  color: #14532d;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.successContent span {
+  color: #64756b;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.successClose {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  background: transparent;
+
+  color: #718078;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+}
+
+.successClose:hover {
+  background: #f0fdf4;
+  color: #15803d;
+}
+
+
+/* =========================================
+   SERVER UNAVAILABLE - MEDICAL RECORDS
+========================================= */
+
+.recordsServerError {
+  position: relative;
+  min-height: 430px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  background: rgba(248, 250, 249, 0.7);
+  border-radius: 20px;
+}
+
+/* Blurred background */
+.recordsServerError::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: rgba(255, 255, 255, 0.55);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   ERROR CARD
+========================================= */
+
+.serverErrorCard {
+  position: relative;
+  z-index: 2;
+
+  width: min(420px, 90%);
+  padding: 35px;
+
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  border: 1px solid rgba(22, 163, 74, 0.12);
+  border-radius: 22px;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.10),
+    0 5px 15px rgba(0, 0, 0, 0.04);
+}
+
+
+/* =========================================
+   ERROR ICON
+========================================= */
+
+.serverErrorIcon {
+  width: 72px;
+  height: 72px;
+
+  margin: 0 auto 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #16a34a;
+
+  background: rgba(22, 163, 74, 0.10);
+}
+
+
+/* =========================================
+   LABEL
+========================================= */
+
+.serverErrorLabel {
+  display: inline-block;
+
+  margin-bottom: 10px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  color: #16a34a;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.serverErrorCard h2 {
+  margin: 0 0 12px;
+
+  font-size: 28px;
+  font-weight: 700;
+
+  color: #17201a;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.serverErrorCard p {
+  max-width: 360px;
+
+  margin: 0 auto 28px;
+
+  font-size: 15px;
+  line-height: 1.7;
+
+  color: #6b7280;
+}
+
+
+/* =========================================
+   RETRY BUTTON
+========================================= */
+
+.retryServerButton {
+  min-width: 150px;
+
+  padding: 13px 24px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: #16a34a;
+  color: white;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.retryServerButton:hover {
+  background: #15803d;
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 6px 15px rgba(22, 163, 74, 0.20);
+}
+
+.retryServerButton:disabled {
+  opacity: 0.75;
+
+  cursor: not-allowed;
+
+  transform: none;
+
+  box-shadow: none;
+}
+
+
+/* =========================================
+   RETRY SPINNER
+========================================= */
+
+.retrySpinner {
+  animation: retrySpin 0.8s linear infinite;
+}
+
+@keyframes retrySpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .recordsServerError {
+    min-height: 380px;
+
+    border-radius: 16px;
+  }
+
+  .serverErrorCard {
+    width: calc(100% - 30px);
+
+    padding: 30px 22px;
+
+    border-radius: 20px;
+  }
+
+  .serverErrorIcon {
+    width: 64px;
+    height: 64px;
+  }
+
+  .serverErrorCard h2 {
+    font-size: 24px;
+  }
+
+  .serverErrorCard p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .retryServerButton {
+    width: 100%;
+  }
+}
+
+.primaryButton:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+
+.spinner {
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+.continueButton:disabled {
+    opacity: 0.75;
+    cursor: not-allowed;
+}

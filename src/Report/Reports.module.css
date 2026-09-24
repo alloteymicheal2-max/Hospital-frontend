@@ -1,0 +1,2508 @@
+/* =========================================================
+   REPORTS PAGE
+========================================================= */
+
+.printReportsPage {
+  min-height: 100vh;
+  padding: 95px 28px 40px;
+  background: #f3f7f5;
+  color: #17201d;
+  font-family:
+    Inter,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+
+
+/* =========================================================
+   TOP SPACING
+========================================================= */
+
+.br1,
+.br2,
+.br3,
+.br4 {
+  display: none;
+}
+
+
+/* =========================================================
+   TOP NAVIGATION
+========================================================= */
+
+.topNavigation {
+  width: 100%;
+  min-height: 72px;
+  padding: 0 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+
+  position: relative;
+  top: 0;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+
+  box-sizing: border-box;
+}
+
+
+/* Back button */
+
+.backButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 9px 12px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: transparent;
+  color: #374151;
+
+  font-size: 13px;
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.backButton:hover {
+  background: #f0fdf4;
+  color: #15803d;
+}
+
+
+/* Center title */
+
+.topTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+
+  color: #16a34a;
+}
+
+.topTitle > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.topTitle span {
+  color: #6b7280;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 1.3px;
+}
+
+.topTitle h1 {
+  margin: 0;
+
+  color: #14532d;
+
+  font-size: 17px;
+  font-weight: 800;
+}
+
+
+/* Print selected */
+
+.printAllButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 10px 16px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: #16a34a;
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow: 0 5px 14px rgba(22, 163, 74, 0.2);
+
+  transition: all 0.2s ease;
+}
+
+.printAllButton:hover {
+  background: #15803d;
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   PATIENT SUMMARY
+========================================================= */
+
+.patientSummary {
+  width: min(1180px, calc(100% - 40px));
+
+  margin: 28px auto 18px;
+  padding: 22px 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+
+  background: #ffffff;
+
+  border: 1px solid #e1e7e4;
+  border-radius: 16px;
+
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.05);
+
+  box-sizing: border-box;
+}
+
+
+/* Patient identity */
+
+.patientIdentity {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  min-width: 230px;
+}
+
+.patientAvatar {
+  width: 52px;
+  height: 52px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.patientLabel {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #16a34a;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+.patientIdentity h2 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.patientIdentity p {
+  margin: 4px 0 0;
+
+  color: #6b7280;
+
+  font-size: 12px;
+}
+
+.patientIdentity p strong {
+  color: #374151;
+}
+
+
+/* Patient details */
+
+.patientDetails {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(100px, 1fr));
+
+  gap: 28px;
+
+  flex: 1;
+}
+
+.patientDetails > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.patientDetails span {
+  color: #6b7280;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.patientDetails strong {
+  color: #17201d;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   INSTRUCTION
+========================================================= */
+
+.reportInstruction {
+  width: min(1180px, calc(100% - 40px));
+
+  margin: 0 auto 18px;
+  padding: 15px 18px;
+
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  background: #ffffff;
+
+  border: 1px solid #d8e8dd;
+  border-left: 4px solid #16a34a;
+
+  border-radius: 12px;
+
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.04);
+
+  box-sizing: border-box;
+}
+
+.instructionIcon {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.reportInstruction > div:nth-child(2) {
+  flex: 1;
+}
+
+.reportInstruction h3 {
+  margin: 0 0 3px;
+
+  color: #14532d;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.reportInstruction p {
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+
+/* Select / clear buttons */
+
+.selectionActions {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.selectionActions button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 8px 11px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+
+  background: #ffffff;
+  color: #374151;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.selectionActions button:hover {
+  border-color: #16a34a;
+  color: #15803d;
+  background: #f0fdf4;
+}
+
+
+/* =========================================================
+   REPORT SUMMARY
+========================================================= */
+
+.reportSummaryBar {
+  width: min(1180px, calc(100% - 40px));
+
+  margin: 0 auto 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+
+  box-sizing: border-box;
+}
+
+.reportSummaryBar > div {
+  min-height: 42px;
+
+  padding: 0 14px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  border: 1px solid #e1e7e4;
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: #374151;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.reportSummaryBar > div:first-child svg {
+  color: #16a34a;
+}
+
+.selectedCount {
+  color: #166534 !important;
+
+  background: #f0fdf4 !important;
+  border-color: #bbf7d0 !important;
+}
+
+.selectedCount svg {
+  color: #16a34a;
+}
+
+
+/* =========================================================
+   MEDICAL REPORT DOCUMENT
+========================================================= */
+
+.reportDocument {
+  width: 210mm;
+  min-height: 297mm;
+
+  margin: 0 auto 30px;
+  padding: 17mm;
+
+  background: #ffffff;
+
+  color: #17201d;
+
+  box-sizing: border-box;
+
+  border-radius: 3px;
+
+  box-shadow:
+    0 12px 45px rgba(0, 0, 0, 0.10);
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   HOSPITAL HEADER
+========================================================= */
+
+.documentHospitalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+
+  padding-bottom: 17px;
+
+  border-bottom: 3px solid #16a34a;
+}
+
+.hospitalBrand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.hospitalLogo {
+  width: 52px;
+  height: 52px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #16a34a;
+  color: #ffffff;
+
+  box-shadow: 0 5px 12px rgba(22, 163, 74, 0.18);
+}
+
+.hospitalBrand h2 {
+  margin: 0;
+
+  color: #14532d;
+
+  font-size: 19px;
+  font-weight: 850;
+
+  letter-spacing: -0.3px;
+}
+
+.hospitalBrand p {
+  margin: 4px 0 0;
+
+  color: #6b7280;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 0.4px;
+}
+
+
+/* Hospital contact */
+
+.hospitalContact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.hospitalContact span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  color: #4b5563;
+
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.hospitalContact svg {
+  color: #16a34a;
+}
+
+
+/* =========================================================
+   DOCUMENT TITLE
+========================================================= */
+
+.documentTitle {
+  padding: 22px 0 19px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.documentTitle > div {
+  flex: 1;
+}
+
+.documentTitle > div > span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #16a34a;
+
+  font-size: 9px;
+  font-weight: 850;
+
+  letter-spacing: 1.2px;
+}
+
+.documentTitle h2 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: 23px;
+  font-weight: 850;
+}
+
+.recordReference {
+  margin: 5px 0 0;
+
+  color: #6b7280;
+
+  font-size: 10px;
+  font-weight: 600;
+}
+
+
+/* Include checkbox */
+
+.includeRecord {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 8px 11px;
+
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+
+  background: #f0fdf4;
+  color: #166534;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.includeRecord input {
+  width: 14px;
+  height: 14px;
+
+  accent-color: #16a34a;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   PATIENT INFORMATION
+========================================================= */
+
+.documentPatientInfo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  border: 1px solid #dfe5e2;
+  border-radius: 9px;
+
+  overflow: hidden;
+
+  margin-bottom: 23px;
+}
+
+.documentPatientInfo > div {
+  min-height: 60px;
+
+  padding: 11px 13px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+
+  border-right: 1px solid #edf0ee;
+  border-bottom: 1px solid #edf0ee;
+}
+
+.documentPatientInfo > div:nth-child(3n) {
+  border-right: none;
+}
+
+.documentPatientInfo > div:nth-last-child(-n + 3) {
+  border-bottom: none;
+}
+
+.documentPatientInfo span {
+  color: #6b7280;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.documentPatientInfo strong {
+  color: #17201d;
+
+  font-size: 11px;
+  font-weight: 750;
+
+  line-height: 1.4;
+}
+
+
+/* Status */
+
+.completedStatus,
+.updatedStatus {
+  display: inline-flex;
+
+  width: fit-content;
+
+  padding: 4px 8px;
+
+  border-radius: 999px;
+
+  font-size: 9px !important;
+  font-weight: 750 !important;
+}
+
+.completedStatus {
+  background: #dcfce7;
+  color: #166534 !important;
+}
+
+.updatedStatus {
+  background: #fef3c7;
+  color: #92400e !important;
+}
+
+
+/* =========================================================
+   DOCUMENT SECTION
+========================================================= */
+
+.documentSection {
+  margin-top: 22px;
+  margin-bottom: 22px;
+}
+
+.documentSectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-bottom: 10px;
+  margin-bottom: 0;
+
+  border-bottom: 2px solid #16a34a;
+}
+
+.documentSectionHeader > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.documentSectionHeader span {
+  color: #16a34a;
+
+  font-size: 8px;
+  font-weight: 850;
+
+  letter-spacing: 1px;
+}
+
+.documentSectionHeader h3 {
+  margin: 0;
+
+  color: #14532d;
+
+  font-size: 14px;
+  font-weight: 850;
+}
+
+.documentSectionHeader > svg {
+  color: #16a34a;
+}
+
+
+/* =========================================================
+   MEDICAL TABLE
+========================================================= */
+
+.medicalTable {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 20px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.reportField {
+  min-width: 0;
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #dfeee5;
+  border-radius: 10px;
+  background: #f8fcf9;
+  box-sizing: border-box;
+}
+
+.reportField label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 9px;
+  color: #16834b;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.reportField label span {
+  color: #16834b;
+}
+
+.reportField input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  accent-color: #16834b;
+}
+
+.reportValue {
+  width: 100%;
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+
+  padding: 10px 12px;
+
+  background: #ffffff;
+  border: 1px solid #e2ebe5;
+  border-radius: 8px;
+
+  color: #16834b;
+  font-size: 14px;
+  font-weight: 600;
+
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+
+/* =========================================================
+   RECORD DETAILS
+========================================================= */
+
+.recordDetails {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  margin-top: 23px;
+
+  border: 1px solid #dfe5e2;
+  border-radius: 8px;
+
+  overflow: hidden;
+}
+
+.recordDetails > div {
+  min-height: 55px;
+
+  padding: 10px 13px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+
+  border-bottom: 1px solid #edf0ee;
+}
+
+.recordDetails > div:nth-child(odd) {
+  border-right: 1px solid #edf0ee;
+}
+
+.recordDetails > div:nth-last-child(-n + 2) {
+  border-bottom: none;
+}
+
+.recordDetails span {
+  color: #6b7280;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.recordDetails strong {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  color: #17201d;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.recordDetails strong svg {
+  color: #16a34a;
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   DOCTOR DECLARATION
+========================================================= */
+
+.doctorDeclaration {
+  margin-top: 23px;
+  padding: 14px 15px;
+
+  background: #f7faf8;
+
+  border: 1px solid #dce9e0;
+  border-left: 4px solid #16a34a;
+
+  border-radius: 7px;
+}
+
+.declarationHeader {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-bottom: 9px;
+}
+
+.declarationHeader > svg {
+  color: #16a34a;
+  flex-shrink: 0;
+}
+
+.declarationHeader > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.declarationHeader span {
+  color: #16a34a;
+
+  font-size: 8px;
+  font-weight: 850;
+
+  letter-spacing: 0.8px;
+}
+
+.declarationHeader h3 {
+  margin: 0;
+
+  color: #14532d;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.doctorDeclaration p {
+  margin: 0;
+
+  color: #4b5563;
+
+  font-size: 10px;
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   SIGNATURE SECTION
+========================================================= */
+
+.signatureSection {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 22px;
+
+  margin-top: 32px;
+}
+
+.signatureBox {
+  min-height: 105px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.signatureSpace {
+  flex: 1;
+  min-height: 35px;
+}
+
+.signatureLine {
+  width: 100%;
+
+  margin-bottom: 7px;
+
+  border-bottom: 1px solid #374151;
+}
+
+.signatureBox strong {
+  color: #17201d;
+
+  font-size: 9px;
+  font-weight: 750;
+}
+
+.signatureBox span {
+  margin-top: 3px;
+
+  color: #6b7280;
+
+  font-size: 8px;
+}
+
+.signatureBox small {
+  margin-top: 6px;
+
+  color: #14532d;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+
+/* =========================================================
+   CONFIDENTIALITY NOTICE
+========================================================= */
+
+.confidentialityNotice {
+  margin-top: 25px;
+  padding: 11px 13px;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+
+  background: #f0fdf4;
+
+  border: 1px solid #bbf7d0;
+  border-radius: 7px;
+
+  color: #166534;
+}
+
+.confidentialityNotice > svg {
+  flex-shrink: 0;
+
+  margin-top: 1px;
+
+  color: #16a34a;
+}
+
+.confidentialityNotice strong {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #14532d;
+
+  font-size: 8px;
+  font-weight: 850;
+
+  letter-spacing: 0.5px;
+}
+
+.confidentialityNotice p {
+  margin: 0;
+
+  color: #4b5563;
+
+  font-size: 8px;
+
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   DOCUMENT FOOTER
+========================================================= */
+
+.documentFooter {
+  margin-top: 25px;
+  padding-top: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+
+  border-top: 1px solid #d1d5db;
+
+  color: #6b7280;
+
+  font-size: 8px;
+}
+
+.documentFooter > div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  color: #374151;
+  font-weight: 700;
+}
+
+.documentFooter svg {
+  color: #16a34a;
+}
+
+
+/* =========================================================
+   FINAL ACTIONS
+========================================================= */
+
+.finalActions {
+  width: min(1180px, calc(100% - 40px));
+
+  margin: 0 auto;
+
+  padding: 18px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #e1e7e4;
+  border-radius: 14px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+
+  box-sizing: border-box;
+}
+
+
+/* Final message */
+
+.finalMessage {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.finalIcon {
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.finalMessage h3 {
+  margin: 0 0 3px;
+
+  color: #14532d;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.finalMessage p {
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 10px;
+}
+
+
+/* Final buttons */
+
+.finalButtons {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.cancelPrintButton,
+.printButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  padding: 10px 15px;
+
+  border-radius: 9px;
+
+  font-size: 11px;
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.cancelPrintButton {
+  border: 1px solid #d1d5db;
+
+  background: #ffffff;
+  color: #374151;
+}
+
+.cancelPrintButton:hover {
+  border-color: #16a34a;
+  background: #f0fdf4;
+  color: #15803d;
+}
+
+.printButton {
+  border: 1px solid #16a34a;
+
+  background: #16a34a;
+  color: #ffffff;
+
+  box-shadow: 0 5px 14px rgba(22, 163, 74, 0.2);
+}
+
+.printButton:hover {
+  background: #15803d;
+  border-color: #15803d;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   PAGE FOOTER
+========================================================= */
+
+.pageFooter {
+  width: min(1180px, calc(100% - 40px));
+
+  margin: 22px auto 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: #9ca3af;
+
+  font-size: 9px;
+
+  box-sizing: border-box;
+}
+
+.pageFooter > div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.pageFooter svg {
+  color: #16a34a;
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .patientSummary {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .patientDetails {
+    width: 100%;
+  }
+
+  .reportDocument {
+    width: calc(100% - 30px);
+    min-height: auto;
+
+    padding: 30px;
+  }
+
+  .reportSummaryBar,
+  .reportInstruction,
+  .finalActions {
+    width: calc(100% - 30px);
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .topNavigation {
+    min-height: 64px;
+    padding: 0 14px;
+  }
+
+  .topTitle span {
+    display: none;
+  }
+
+  .topTitle h1 {
+    font-size: 14px;
+  }
+
+  .backButton span {
+    display: none;
+  }
+
+  .printAllButton {
+    padding: 9px 11px;
+  }
+
+  .printAllButton {
+    font-size: 0;
+  }
+
+  .printAllButton svg {
+    margin: 0;
+  }
+
+
+  /* Patient */
+
+  .patientSummary {
+    width: calc(100% - 20px);
+
+    margin-top: 18px;
+
+    padding: 17px;
+  }
+
+  .patientDetails {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 17px;
+  }
+
+
+  /* Instruction */
+
+  .reportInstruction {
+    width: calc(100% - 20px);
+
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    padding: 14px;
+  }
+
+  .reportInstruction > div:nth-child(2) {
+    min-width: 0;
+  }
+
+  .selectionActions {
+    width: 100%;
+
+    margin-left: 51px;
+  }
+
+
+  /* Summary */
+
+  .reportSummaryBar {
+    width: calc(100% - 20px);
+
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .reportSummaryBar > div {
+    justify-content: center;
+  }
+
+
+  /* Document */
+
+  .reportDocument {
+    width: calc(100% - 14px);
+
+    padding: 20px 15px;
+
+    border-radius: 8px;
+  }
+
+  .documentHospitalHeader {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .hospitalContact {
+    width: 100%;
+
+    align-items: flex-start;
+  }
+
+  .documentTitle {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .documentTitle h2 {
+    font-size: 20px;
+  }
+
+  .includeRecord {
+    width: fit-content;
+  }
+
+
+  /* Patient information */
+
+  .documentPatientInfo {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .documentPatientInfo > div:nth-child(3n) {
+    border-right: 1px solid #edf0ee;
+  }
+
+  .documentPatientInfo > div:nth-child(2n) {
+    border-right: none;
+  }
+
+  .documentPatientInfo > div:nth-last-child(-n + 3) {
+    border-bottom: 1px solid #edf0ee;
+  }
+
+  .documentPatientInfo > div:nth-last-child(-n + 2) {
+    border-bottom: none;
+  }
+
+
+  /* Medical table */
+
+  .medicalTable {
+    grid-template-columns: 1fr;
+  }
+
+  .medicalColumn:first-child {
+    border-right: none;
+    border-bottom: 1px solid #e0e7e3;
+  }
+
+
+  /* Record details */
+
+  .recordDetails {
+    grid-template-columns: 1fr;
+  }
+
+  .recordDetails > div:nth-child(odd) {
+    border-right: none;
+  }
+
+  .recordDetails > div:nth-last-child(-n + 2) {
+    border-bottom: 1px solid #edf0ee;
+  }
+
+  .recordDetails > div:last-child {
+    border-bottom: none;
+  }
+
+
+  /* Signatures */
+
+  .signatureSection {
+    grid-template-columns: 1fr;
+
+    gap: 28px;
+  }
+
+
+  /* Footer */
+
+  .documentFooter {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .finalActions {
+    width: calc(100% - 20px);
+
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .finalMessage {
+    align-items: flex-start;
+  }
+
+  .finalButtons {
+    width: 100%;
+  }
+
+  .cancelPrintButton,
+  .printButton {
+    flex: 1;
+  }
+
+  .pageFooter {
+    width: calc(100% - 20px);
+
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 7px;
+  }
+}
+
+
+/* =========================================================
+   PRINT
+========================================================= */
+
+@media print {
+
+  /* =======================================================
+     A4 PAPER
+  ======================================================= */
+
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+
+
+  /* =======================================================
+     PRESERVE COLORS
+  ======================================================= */
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+
+  /* =======================================================
+     BODY
+  ======================================================= */
+
+  html,
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+
+    width: 100% !important;
+
+    background: #ffffff !important;
+  }
+
+
+  /* =======================================================
+     REPORT PAGE CONTAINER
+  ======================================================= */
+
+  .printReportsPage {
+    margin: 0 !important;
+    padding: 0 !important;
+
+    width: 100% !important;
+    min-height: auto !important;
+
+    background: #ffffff !important;
+  }
+
+
+  /* =======================================================
+     HIDE EVERYTHING THAT IS NOT PART
+     OF THE ACTUAL MEDICAL REPORT
+  ======================================================= */
+
+  .br1,
+  .br2,
+  .br3,
+  .br4,
+
+  .topNavigation,
+
+  .patientSummary,
+
+  .reportInstruction,
+
+  .reportSummaryBar,
+
+  .finalActions,
+
+  .pageFooter,
+
+  .defaultReportsState,
+
+  .emptyReportState {
+    display: none !important;
+  }
+
+
+  /* =======================================================
+     ACTUAL MEDICAL REPORT
+     
+     THIS IS THE MAIN PRINTED DOCUMENT.
+  ======================================================= */
+
+  .reportDocument {
+    display: block !important;
+
+    width: 100% !important;
+    min-height: auto !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background: #ffffff !important;
+
+    border: none !important;
+    border-radius: 0 !important;
+
+    box-shadow: none !important;
+
+    overflow: visible !important;
+
+    page-break-after: always;
+    break-after: page;
+  }
+
+  .reportDocument:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+
+
+  /* =======================================================
+     HOSPITAL HEADER
+     
+     THIS IS INSIDE THE REPORT.
+     IT MUST PRINT.
+  ======================================================= */
+
+  .documentHospitalHeader {
+    display: flex !important;
+
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+
+  /* =======================================================
+     DOCUMENT TITLE
+  ======================================================= */
+
+  .documentTitle {
+    display: flex !important;
+
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+
+  /* =======================================================
+     PATIENT INFORMATION
+  ======================================================= */
+
+  .documentPatientInfo {
+    display: grid !important;
+
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+
+  /* =======================================================
+     DOCUMENT SECTION
+  ======================================================= */
+
+  .documentSection {
+    display: block !important;
+
+    break-inside: auto;
+    page-break-inside: auto;
+  }
+
+  .documentSectionHeader {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+
+  /* =======================================================
+     MEDICAL TABLE
+  ======================================================= */
+
+  .medicalTable {
+    display: grid !important;
+
+    width: 100% !important;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr)) !important;
+
+    gap: 16px 20px !important;
+  }
+
+
+  /* =======================================================
+     MEDICAL FIELD
+  ======================================================= */
+
+  .reportField {
+    display: block !important;
+
+    width: 100% !important;
+
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+
+  /* =======================================================
+     RECORD DETAILS
+  ======================================================= */
+
+  .recordDetails {
+    display: grid !important;
+
+    width: 100% !important;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr)) !important;
+
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+
+  /* =======================================================
+     DOCTOR DECLARATION
+  ======================================================= */
+
+  .doctorDeclaration {
+    display: block !important;
+
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+
+  /* =======================================================
+     SIGNATURE SECTION
+  ======================================================= */
+
+  .signatureSection {
+    display: grid !important;
+
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .signatureBox {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+
+  /* =======================================================
+     CONFIDENTIALITY NOTICE
+  ======================================================= */
+
+  .confidentialityNotice {
+    display: flex !important;
+
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+
+  /* =======================================================
+     DOCUMENT FOOTER
+     
+     THIS IS INSIDE THE REPORT.
+     IT MUST PRINT.
+  ======================================================= */
+
+  .documentFooter {
+    display: flex !important;
+
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+
+  /* =======================================================
+     HIDE CHECKBOXES
+     
+     The actual medical information remains visible.
+  ======================================================= */
+
+  .reportField input[type="checkbox"],
+  .includeRecord input[type="checkbox"] {
+    display: none !important;
+  }
+
+
+  /* =======================================================
+     HIDE ALL BUTTONS
+  ======================================================= */
+
+  button {
+    display: none !important;
+  }
+
+
+  /* =======================================================
+     CLINICAL INFORMATION COLORS
+  ======================================================= */
+
+  .documentSectionHeader span {
+    color: #16a34a !important;
+  }
+
+  .documentSectionHeader h3 {
+    color: #14532d !important;
+  }
+
+  .documentSectionHeader > svg {
+    color: #16a34a !important;
+  }
+
+  .reportField label {
+    color: #16834b !important;
+  }
+
+  .reportField label span {
+    color: #16834b !important;
+  }
+
+  .reportValue {
+    color: #16834b !important;
+  }
+
+
+  /* =======================================================
+     GREEN ICONS
+  ======================================================= */
+
+  .recordDetails strong svg {
+    color: #16a34a !important;
+  }
+
+  .documentFooter svg {
+    color: #16a34a !important;
+  }
+
+  .hospitalContact svg {
+    color: #16a34a !important;
+  }
+
+  .declarationHeader > svg {
+    color: #16a34a !important;
+  }
+
+
+  /* =======================================================
+     PREVENT IMPORTANT ELEMENTS
+     FROM SPLITTING
+  ======================================================= */
+
+  .documentHospitalHeader,
+  .documentTitle,
+  .documentPatientInfo,
+  .documentSectionHeader,
+  .reportField,
+  .recordDetails,
+  .doctorDeclaration,
+  .signatureBox,
+  .confidentialityNotice {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+}
+ 
+
+/* =========================================================
+   EMPTY REPORT STATE
+========================================================= */
+
+.emptyReportState {
+  width: 100%;
+  min-height: 430px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 38px;
+  padding: 55px 60px;
+  margin-top: 24px;
+
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(22, 163, 74, 0.12);
+  border-radius: 24px;
+
+  box-shadow:
+    0 20px 50px rgba(15, 23, 42, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.emptyReportIcon {
+  width: 105px;
+  height: 105px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #16a34a;
+
+  background: linear-gradient(
+    145deg,
+    rgba(22, 163, 74, 0.14),
+    rgba(22, 163, 74, 0.05)
+  );
+
+  border: 1px solid rgba(22, 163, 74, 0.15);
+  border-radius: 30px;
+
+  box-shadow:
+    0 15px 35px rgba(22, 163, 74, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.emptyReportContent {
+  max-width: 590px;
+}
+
+.emptyReportBadge {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 6px 11px;
+
+  margin-bottom: 12px;
+
+  color: #15803d;
+  background: rgba(22, 163, 74, 0.08);
+
+  border: 1px solid rgba(22, 163, 74, 0.12);
+  border-radius: 999px;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.emptyReportContent h2 {
+  margin: 0 0 10px;
+
+  color: #17251d;
+
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.emptyReportContent p {
+  margin: 0;
+
+  max-width: 560px;
+
+  color: #64748b;
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.emptyReportInfo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  width: fit-content;
+
+  margin-top: 22px;
+  padding: 10px 13px;
+
+  color: #475569;
+  background: #f8faf9;
+
+  border: 1px solid #e7eee9;
+  border-radius: 10px;
+
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.emptyReportInfo svg {
+  color: #16a34a;
+  flex-shrink: 0;
+}
+
+.emptyReportButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  margin-top: 22px;
+  padding: 12px 18px;
+
+  color: white;
+  background: #16a34a;
+
+  border: none;
+  border-radius: 11px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 8px 20px rgba(22, 163, 74, 0.2);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.emptyReportButton:hover {
+  background: #15803d;
+  transform: translateY(-1px);
+
+  box-shadow: 0 12px 25px rgba(22, 163, 74, 0.25);
+}
+
+.emptyReportButton:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   EMPTY REPORT — MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .emptyReportState {
+    min-height: 420px;
+    flex-direction: column;
+    gap: 24px;
+
+    padding: 40px 24px;
+
+    text-align: center;
+  }
+
+  .emptyReportIcon {
+    width: 88px;
+    height: 88px;
+
+    border-radius: 26px;
+  }
+
+  .emptyReportContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .emptyReportContent h2 {
+    font-size: 24px;
+  }
+
+  .emptyReportContent p {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .emptyReportInfo {
+    text-align: left;
+  }
+
+  .emptyReportButton {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+
+/* =========================================================
+   DEFAULT REPORTS STATE
+========================================================= */
+
+.defaultReportsState {
+  min-height: 75vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 60px 30px;
+
+  text-align: center;
+}
+
+.defaultReportsIcon {
+  width: 105px;
+  height: 105px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 24px;
+
+  color: #16a34a;
+
+  background: linear-gradient(
+    145deg,
+    rgba(22, 163, 74, 0.14),
+    rgba(22, 163, 74, 0.04)
+  );
+
+  border: 1px solid rgba(22, 163, 74, 0.14);
+
+  border-radius: 30px;
+
+  box-shadow:
+    0 18px 40px rgba(22, 163, 74, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.defaultReportsBadge {
+  display: inline-flex;
+
+  padding: 6px 12px;
+
+  margin-bottom: 12px;
+
+  color: #15803d;
+
+  background: rgba(22, 163, 74, 0.08);
+
+  border: 1px solid rgba(22, 163, 74, 0.12);
+
+  border-radius: 999px;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.defaultReportsState h1 {
+  margin: 0 0 12px;
+
+  color: #17251d;
+
+  font-size: 32px;
+  font-weight: 700;
+
+  letter-spacing: -0.035em;
+}
+
+.defaultReportsState p {
+  max-width: 560px;
+
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.defaultReportsInfo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-top: 22px;
+  padding: 11px 15px;
+
+  color: #475569;
+
+  background: #f8faf9;
+
+  border: 1px solid #e5eee8;
+
+  border-radius: 10px;
+
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.defaultReportsInfo svg {
+  color: #16a34a;
+  flex-shrink: 0;
+}
+
+.defaultReportsButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  margin-top: 22px;
+  padding: 13px 20px;
+
+  color: #ffffff;
+
+  background: #16a34a;
+
+  border: none;
+  border-radius: 11px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 9px 22px rgba(22, 163, 74, 0.2);
+
+  transition: 0.2s ease;
+}
+
+.defaultReportsButton:hover {
+  background: #15803d;
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 13px 28px rgba(22, 163, 74, 0.25);
+}
+
+
+
+/* =====================================================
+   SERVER UNAVAILABLE OVERLAY
+===================================================== */
+
+.serverErrorOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background: rgba(255, 255, 255, 0.35);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+
+/* =====================================================
+   SERVER ERROR CARD
+===================================================== */
+
+.serverErrorCard {
+  width: min(440px, 100%);
+
+  padding: 30px;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  border: 1px solid rgba(255, 255, 255, 0.8);
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 25px 70px rgba(15, 23, 42, 0.18),
+    0 8px 25px rgba(15, 23, 42, 0.08);
+
+  text-align: center;
+
+  animation: serverCardAppear 0.3s ease;
+}
+
+
+@keyframes serverCardAppear {
+
+  from {
+    opacity: 0;
+    transform: translateY(15px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+}
+
+
+/* =====================================================
+   ERROR ICON
+===================================================== */
+
+.serverErrorIcon {
+  width: 64px;
+  height: 64px;
+
+  margin: 0 auto 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 18px;
+
+  background: #fff1f2;
+
+  color: #dc2626;
+
+  border: 1px solid #fecdd3;
+}
+
+
+.serverErrorIcon svg {
+  animation: serverIconPulse 1.5s ease-in-out infinite;
+}
+
+
+@keyframes serverIconPulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.45;
+  }
+
+}
+
+
+/* =====================================================
+   BADGE
+===================================================== */
+
+.serverErrorBadge {
+  display: inline-flex;
+
+  padding: 6px 10px;
+
+  margin-bottom: 10px;
+
+  border-radius: 999px;
+
+  background: #fff1f2;
+
+  color: #dc2626;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.serverErrorContent h2 {
+  margin: 0 0 8px;
+
+  color: #172033;
+
+  font-size: 23px;
+  font-weight: 750;
+}
+
+
+.serverErrorContent p {
+  margin: 0 auto;
+
+  max-width: 350px;
+
+  color: #64748b;
+
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+
+/* =====================================================
+   STATUS INFORMATION
+===================================================== */
+
+.serverErrorInfo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-top: 20px;
+  padding: 12px 14px;
+
+  text-align: left;
+
+  border-radius: 12px;
+
+  background: #f8fafc;
+
+  border: 1px solid #e2e8f0;
+
+  color: #64748b;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+
+.statusDot {
+  flex: 0 0 auto;
+
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #dc2626;
+
+  box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.1);
+}
+
+
+/* =====================================================
+   RETRY BUTTON
+===================================================== */
+
+.retryServerButton {
+  width: 100%;
+
+  margin-top: 20px;
+
+  min-height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  border: none;
+  border-radius: 13px;
+
+  background: #166534;
+
+  color: white;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+
+.retryServerButton:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 8px 20px rgba(22, 101, 52, 0.22);
+}
+
+
+.retryServerButton:active {
+  transform: translateY(0);
+}
+
+
+.retryServerButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+
+/* =====================================================
+   SPINNER
+===================================================== */
+
+.spinner {
+  animation: spin 0.8s linear infinite;
+}
+
+
+@keyframes spin {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}

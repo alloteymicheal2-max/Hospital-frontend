@@ -1,0 +1,1803 @@
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+  position: fixed;
+
+  top: 15px;
+  left: 15px;
+  right: 15px;
+
+  z-index: 1000;
+
+  min-height: 68px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  background-color: #ffffff;
+
+  padding: 12px 24px;
+
+  border-radius: 16px;
+
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid #dcfce7;
+
+  box-sizing: border-box;
+
+  transition:
+    min-height 0.25s ease,
+    height 0.25s ease;
+}
+
+.hideH {
+  display: none;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logoArea {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  flex-shrink: 0;
+
+  text-decoration: none;
+}
+
+.logoIcon {
+  width: 44px;
+  height: 44px;
+
+  background-color: #16a34a;
+
+  color: #ffffff;
+
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+}
+
+.logoText strong {
+  font-size: 20px;
+
+  font-weight: 700;
+
+  color: #166534;
+
+  line-height: 1.1;
+}
+
+.logoText span {
+  font-size: 9px;
+
+  font-weight: 600;
+
+  color: #64748b;
+
+  letter-spacing: 0.05em;
+
+  margin-top: 2px;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.navigation {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  background-color: #f0fdf4;
+
+  padding: 6px;
+
+  border-radius: 12px;
+
+  flex: 1;
+
+  min-width: 0;
+}
+
+.navLink {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  background: transparent;
+
+  border: none;
+
+  padding: 8px 14px;
+
+  border-radius: 8px;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  color: #64748b;
+
+  cursor: pointer;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  transition: all 0.2s ease;
+}
+
+.navLink:hover {
+  color: #166534;
+
+  background-color: #dcfce7;
+}
+
+.navLink.active {
+  background-color: #16a34a;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 2px 8px rgba(22, 163, 74, 0.25);
+}
+
+
+/* =========================================================
+   RIGHT SIDE
+========================================================= */
+
+.headerRight {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   INTERNET STATUS
+========================================================= */
+
+.connectionStatus {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 7px 10px;
+
+  border-radius: 20px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  color: #64748b;
+
+  white-space: nowrap;
+}
+
+.onlineDot,
+.offlineDot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  flex-shrink: 0;
+}
+
+.onlineDot {
+  background-color: #22c55e;
+
+  box-shadow:
+    0 0 0 3px rgba(34, 197, 94, 0.12);
+}
+
+.offlineDot {
+  background-color: #ef4444;
+
+  box-shadow:
+    0 0 0 3px rgba(239, 68, 68, 0.12);
+}
+
+
+/* =========================================================
+   SEARCH / NOTIFICATION BUTTONS
+========================================================= */
+
+.iconButton {
+  position: relative;
+
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid transparent;
+
+  background-color: transparent;
+
+  color: #64748b;
+
+  border-radius: 9px;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.iconButton:hover {
+  background-color: #f0fdf4;
+
+  color: #16a34a;
+}
+
+
+/* =========================================================
+   NOTIFICATION DOT
+========================================================= */
+
+.notificationDot {
+  position: absolute;
+
+  top: 7px;
+  right: 7px;
+
+  width: 6px;
+  height: 6px;
+
+  background-color: #ef4444;
+
+  border: 2px solid #ffffff;
+
+  border-radius: 50%;
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.profile {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 4px 7px 4px 5px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.profile:hover {
+  background-color: #f0fdf4;
+}
+
+.profileAvatar {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background-color: #16a34a;
+
+  color: #ffffff;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+.profileDetails {
+  display: flex;
+
+  flex-direction: column;
+
+  line-height: 1.2;
+}
+
+.profileDetails strong {
+  color: #166534;
+
+  font-size: 12px;
+}
+
+.profileDetails span {
+  margin-top: 3px;
+
+  color: #64748b;
+
+  font-size: 10px;
+}
+
+.profileArrow {
+  color: #94a3b8;
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+.logoutBtn {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  background-color: transparent;
+
+  border: 1px solid #86efac;
+
+  color: #16a34a;
+
+  padding: 8px 16px;
+
+  border-radius: 8px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.logoutBtn:hover {
+  background-color: #16a34a;
+
+  border-color: #16a34a;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   HAMBURGER
+========================================================= */
+
+.menuButton {
+  display: none;
+
+  width: 40px;
+  height: 40px;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid #bbf7d0;
+
+  background-color: #ffffff;
+
+  color: #166534;
+
+  border-radius: 9px;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.menuButton:hover {
+  background-color: #f0fdf4;
+
+  border-color: #86efac;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .header {
+    gap: 12px;
+
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .navLink {
+    padding-left: 9px;
+    padding-right: 9px;
+
+    font-size: 12px;
+
+    gap: 5px;
+  }
+
+  .profileDetails {
+    display: none;
+  }
+
+  .profileArrow {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   SMALL TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .brandText {
+    display: none;
+  }
+
+  .navLink {
+    width: 38px;
+
+    padding: 8px;
+
+    justify-content: center;
+  }
+
+  .navLink span {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .header {
+    top: 10px;
+
+    left: 10px;
+    right: 10px;
+
+    min-height: 60px;
+
+    padding: 9px 12px;
+
+    flex-wrap: wrap;
+
+    gap: 0;
+  }
+
+
+  /* =========================
+     HAMBURGER
+  ========================= */
+
+  .menuButton {
+    display: flex;
+
+    margin-left: auto;
+  }
+
+
+  /* =========================
+     RIGHT SIDE
+  ========================= */
+
+  .headerRight {
+    margin-left: 7px;
+
+    gap: 2px;
+  }
+
+
+  /* Hide Online / Offline text */
+
+  .connectionStatus {
+    padding: 7px;
+  }
+
+  .connectionStatus span:last-child {
+    display: none;
+  }
+
+
+  /* Hide logout on mobile */
+
+  .logoutBtn {
+    display: none;
+  }
+
+
+  /* =========================
+     NAVIGATION CLOSED
+  ========================= */
+
+  .navigation {
+    display: none;
+  }
+
+
+  /* =========================
+     NAVIGATION OPEN
+     
+     Header increases DOWNWARD
+  ========================= */
+
+  .navigationOpen {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    justify-content: flex-start;
+
+    flex-basis: 100%;
+
+    width: 100%;
+
+    margin-top: 12px;
+
+    padding: 8px;
+
+    border-top: 1px solid #dcfce7;
+
+    background-color: #f0fdf4;
+
+    gap: 4px;
+
+    animation: openMenu 0.25s ease;
+  }
+
+
+  /* Mobile navigation links */
+
+  .navigationOpen .navLink {
+
+    width: 100%;
+
+    height: 44px;
+
+    padding: 0 14px;
+
+    justify-content: flex-start;
+
+    gap: 10px;
+
+    font-size: 13px;
+  }
+
+  .navigationOpen .navLink span {
+    display: inline;
+  }
+
+
+  .navigationOpen .navLink.active {
+    background-color: #16a34a;
+
+    color: #ffffff;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .header {
+    top: 8px;
+
+    left: 8px;
+    right: 8px;
+
+    padding: 8px 10px;
+  }
+
+  .logoIcon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .logoText strong {
+    font-size: 17px;
+  }
+
+  .logoText span {
+    display: none;
+  }
+
+  .iconButton {
+    width: 34px;
+    height: 34px;
+  }
+
+  .profileAvatar {
+    width: 33px;
+    height: 33px;
+  }
+
+  .menuButton {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONE
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .connectionStatus {
+    display: none;
+  }
+
+  .brandText {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   MOBILE MENU ANIMATION
+========================================================= */
+
+@keyframes openMenu {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(-6px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   OFFLINE INTERNET OVERLAY
+========================================================= */
+
+.offlineOverlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(15, 23, 42, 0.32);
+
+  backdrop-filter: blur(5px);
+
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.offlineCard {
+  width: 460px;
+
+  max-width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 26px;
+
+  background: #ffffff;
+
+  border: 1px solid #dcfce7;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 30px 70px rgba(15, 23, 42, 0.18),
+    0 10px 25px rgba(15, 23, 42, 0.08);
+}
+
+.offlineIcon {
+  width: 76px;
+  height: 76px;
+
+  min-width: 76px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 18px;
+
+  background: #fef2f2;
+
+  border: 1px solid #fecaca;
+
+  color: #dc2626;
+}
+
+.offlineContent {
+  flex: 1;
+}
+
+.offlineContent h2 {
+  margin: 0;
+
+  color: #166534;
+
+  font-size: 19px;
+
+  font-weight: 700;
+}
+
+.offlineContent p {
+  margin: 7px 0 14px;
+
+  color: #64748b;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+.waitingStatus {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: #64748b;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+.spinner {
+  color: #16a34a;
+
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   OFFLINE CARD MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .offlineCard {
+    flex-direction: column;
+
+    text-align: center;
+
+    width: 100%;
+
+    gap: 16px;
+
+    padding: 25px 20px;
+  }
+
+  .offlineIcon {
+    width: 70px;
+
+    height: 70px;
+
+    min-width: 70px;
+  }
+
+  .waitingStatus {
+    justify-content: center;
+  }
+}
+
+.notificationBadge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 20px;
+
+  background: #d94c4c;
+  border: 2px solid #ffffff;
+
+  color: #ffffff;
+  font-size: 9px;
+  font-weight: 750;
+  line-height: 1;
+
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.14);
+
+  animation: notificationBadgePop 0.25s ease-out;
+}
+
+@keyframes notificationBadgePop {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+
+/* =========================================================
+   NOTIFICATION PANEL
+   ========================================================= */
+
+.notificationPanel {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+
+  width: 390px;
+  max-width: calc(100vw - 30px);
+
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.12),
+    0 5px 18px rgba(0, 0, 0, 0.06);
+
+  overflow: hidden;
+
+  z-index: 1000;
+
+  animation: notificationAppear 0.22s ease-out;
+}
+
+
+/* =========================================================
+   NOTIFICATION HEADER
+   ========================================================= */
+
+.notificationHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 14px;
+
+  padding: 17px 18px;
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+
+  background: rgba(255, 255, 255, 0.65);
+}
+
+
+/* Left side of header */
+
+.notificationTitleArea {
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  min-width: 0;
+}
+
+
+.notificationTitleIcon {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: rgba(34, 197, 94, 0.10);
+  color: #16a34a;
+}
+
+
+.notificationTitleArea h3 {
+  margin: 0;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  color: #17211b;
+
+  line-height: 1.2;
+}
+
+
+.notificationTitleArea p {
+  margin: 4px 0 0;
+
+  font-size: 11px;
+
+  color: #7b857f;
+
+  line-height: 1.3;
+}
+
+
+/* =========================================================
+   HEADER BUTTONS
+   ========================================================= */
+
+.notificationHeaderActions {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  flex-shrink: 0;
+}
+
+
+.expandNotificationButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  height: 34px;
+
+  padding: 0 10px;
+
+  border: 1px solid rgba(34, 197, 94, 0.14);
+
+  border-radius: 9px;
+
+  background: rgba(34, 197, 94, 0.07);
+
+  color: #15803d;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.expandNotificationButton:hover {
+  background: rgba(34, 197, 94, 0.13);
+
+  border-color: rgba(34, 197, 94, 0.25);
+
+  transform: translateY(-1px);
+}
+
+
+.notificationClose {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  border-radius: 9px;
+
+  background: rgba(0, 0, 0, 0.035);
+
+  color: #69736d;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.notificationClose:hover {
+  background: rgba(239, 68, 68, 0.08);
+
+  color: #dc2626;
+
+  transform: rotate(4deg);
+}
+
+
+/* =========================================================
+   NOTIFICATION BODY
+   ========================================================= */
+
+.notificationBody {
+  max-height: 430px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  padding: 10px;
+}
+
+
+/* Custom scrollbar */
+
+.notificationBody::-webkit-scrollbar {
+  width: 5px;
+}
+
+
+.notificationBody::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+.notificationBody::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 108, 0.25);
+
+  border-radius: 20px;
+}
+
+
+.notificationBody::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 108, 0.4);
+}
+
+
+/* Firefox */
+
+.notificationBody {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(100, 116, 108, 0.25) transparent;
+}
+
+
+/* =========================================================
+   NOTIFICATION LIST
+   ========================================================= */
+
+.notificationList {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+
+/* =========================================================
+   NOTIFICATION ITEM
+   ========================================================= */
+
+.notificationItem {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 12px;
+
+  padding: 13px;
+
+  border-radius: 14px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+
+.notificationItem:hover {
+  transform: translateY(-1px);
+
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.05);
+}
+
+
+/* =========================================================
+   UNREAD NOTIFICATION
+   ========================================================= */
+
+.notificationUnread {
+  background:
+    linear-gradient(135deg,
+      rgba(34, 197, 94, 0.09),
+      rgba(255, 255, 255, 0.72));
+
+  border: 1px solid rgba(34, 197, 94, 0.16);
+
+  box-shadow:
+    inset 3px 0 0 #22c55e;
+}
+
+
+.notificationUnread:hover {
+  background:
+    linear-gradient(135deg,
+      rgba(34, 197, 94, 0.13),
+      rgba(255, 255, 255, 0.82));
+}
+
+
+/* =========================================================
+   READ NOTIFICATION
+   ========================================================= */
+
+.notificationRead {
+  background: rgba(248, 250, 249, 0.8);
+
+  border: 1px solid rgba(0, 0, 0, 0.045);
+
+  opacity: 0.82;
+}
+
+
+.notificationRead:hover {
+  background: rgba(243, 246, 244, 0.95);
+
+  opacity: 1;
+}
+
+
+/* =========================================================
+   NOTIFICATION ICON
+   ========================================================= */
+
+.notificationItemIcon {
+  width: 36px;
+  height: 36px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: rgba(34, 197, 94, 0.08);
+
+  color: #16a34a;
+}
+
+
+.notificationRead .notificationItemIcon {
+  background: rgba(100, 116, 108, 0.08);
+
+  color: #7b857f;
+}
+
+
+/* =========================================================
+   UNREAD ICON
+   ========================================================= */
+
+.unreadNotificationIcon {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #16a34a;
+}
+
+
+/* Small notification dot */
+
+.unreadNotificationIcon::after {
+  content: "";
+
+  position: absolute;
+
+  top: -4px;
+  right: -4px;
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow:
+    0 0 0 3px rgba(34, 197, 94, 0.12);
+}
+
+
+/* =========================================================
+   NOTIFICATION CONTENT
+   ========================================================= */
+
+.notificationItemContent {
+  flex: 1;
+
+  min-width: 0;
+}
+
+
+.notificationItemTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+}
+
+
+.notificationItemContent h4 {
+  margin: 0;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  color: #1c2720;
+
+  line-height: 1.35;
+}
+
+
+.notificationRead .notificationItemContent h4 {
+  color: #465149;
+}
+
+
+.notificationItemContent p {
+  margin: 4px 0 0;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+
+  color: #69736d;
+}
+
+
+/* =========================================================
+   NEW BADGE
+   ========================================================= */
+
+.unreadIndicator {
+  flex-shrink: 0;
+
+  padding: 4px 8px;
+
+  border-radius: 20px;
+
+  background: rgba(34, 197, 94, 0.11);
+
+  color: #15803d;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 0.3px;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   DATE
+   ========================================================= */
+
+.notificationDate {
+  display: block;
+
+  margin-top: 7px;
+
+  font-size: 10px;
+
+  color: #9aa39e;
+}
+
+
+/* =========================================================
+   EMPTY NOTIFICATION
+   ========================================================= */
+
+.emptyNotification {
+  min-height: 270px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 35px 20px;
+}
+
+
+.emptyNotificationIcon {
+  width: 64px;
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 14px;
+
+  border-radius: 20px;
+
+  background: rgba(34, 197, 94, 0.08);
+
+  color: #16a34a;
+}
+
+
+.emptyNotification h4 {
+  margin: 0;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  color: #27332c;
+}
+
+
+.emptyNotification p {
+  max-width: 260px;
+
+  margin: 7px 0 0;
+
+  font-size: 11px;
+
+  line-height: 1.6;
+
+  color: #87918a;
+}
+
+
+/* =========================================================
+   EXPANDED NOTIFICATION VIEW
+   ========================================================= */
+
+.notificationExpanded {
+  position: fixed;
+
+  top: 5vh;
+  left: 5vw;
+
+  width: 90vw;
+  height: 90vh;
+
+  max-width: none;
+  max-height: none;
+
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 26px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.18),
+    0 10px 30px rgba(0, 0, 0, 0.08);
+
+  z-index: 2000;
+
+  animation: notificationExpand 0.28s ease-out;
+}
+
+
+/* Expanded header */
+
+.notificationExpanded .notificationHeader {
+  padding: 21px 24px;
+
+  flex-shrink: 0;
+}
+
+
+/* Expanded title */
+
+.notificationExpanded .notificationTitleArea h3 {
+  font-size: 18px;
+}
+
+
+.notificationExpanded .notificationTitleArea p {
+  font-size: 12px;
+}
+
+
+/* Expanded icon */
+
+.notificationExpanded .notificationTitleIcon {
+  width: 44px;
+  height: 44px;
+
+  border-radius: 14px;
+}
+
+
+/* Expanded body */
+
+.notificationExpanded .notificationBody {
+  flex: 1;
+
+  max-height: none;
+
+  padding: 18px 22px 22px;
+
+  overflow-y: auto;
+}
+
+
+/* Expanded list */
+
+.notificationExpanded .notificationList {
+  gap: 10px;
+}
+
+
+/* Expanded notification */
+
+.notificationExpanded .notificationItem {
+  padding: 17px;
+
+  border-radius: 16px;
+}
+
+
+/* Expanded icon */
+
+.notificationExpanded .notificationItemIcon {
+  width: 42px;
+  height: 42px;
+
+  border-radius: 13px;
+}
+
+
+/* Expanded title */
+
+.notificationExpanded .notificationItemContent h4 {
+  font-size: 14px;
+}
+
+
+/* Expanded message */
+
+.notificationExpanded .notificationItemContent p {
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+
+/* Expanded date */
+
+.notificationExpanded .notificationDate {
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   EXPANDED EMPTY STATE
+   ========================================================= */
+
+.notificationExpanded .emptyNotification {
+  min-height: 100%;
+
+  padding: 60px 20px;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .notificationPanel {
+    position: fixed;
+
+    top: 72px;
+    left: 12px;
+    right: 12px;
+
+    width: auto;
+    max-width: none;
+
+    border-radius: 18px;
+  }
+
+
+  .notificationHeader {
+    padding: 14px;
+  }
+
+
+  .notificationTitleIcon {
+    width: 35px;
+    height: 35px;
+  }
+
+
+  .notificationTitleArea h3 {
+    font-size: 14px;
+  }
+
+
+  .notificationTitleArea p {
+    font-size: 10px;
+  }
+
+
+  .expandNotificationButton span {
+    display: none;
+  }
+
+
+  .expandNotificationButton {
+    width: 34px;
+
+    padding: 0;
+  }
+
+
+  .notificationBody {
+    max-height: 65vh;
+
+    padding: 8px;
+  }
+
+
+  .notificationItem {
+    padding: 11px;
+
+    gap: 10px;
+  }
+
+
+  .notificationItemIcon {
+    width: 34px;
+    height: 34px;
+
+    border-radius: 10px;
+  }
+
+
+  .notificationItemContent h4 {
+    font-size: 12px;
+  }
+
+
+  .notificationItemContent p {
+    font-size: 11px;
+  }
+
+
+  .notificationDate {
+    font-size: 9px;
+  }
+
+
+  /* Expanded mobile */
+
+  .notificationExpanded {
+    top: 3vh;
+    left: 3vw;
+
+    width: 94vw;
+    height: 94vh;
+
+    border-radius: 20px;
+  }
+
+
+  .notificationExpanded .notificationHeader {
+    padding: 16px;
+  }
+
+
+  .notificationExpanded .notificationBody {
+    padding: 12px;
+  }
+
+
+  .notificationExpanded .notificationTitleArea h3 {
+    font-size: 16px;
+  }
+
+
+  .notificationExpanded .notificationItem {
+    padding: 14px;
+  }
+
+
+  .notificationExpanded .notificationItemContent h4 {
+    font-size: 13px;
+  }
+
+
+  .notificationExpanded .notificationItemContent p {
+    font-size: 12px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  .notificationPanel {
+    left: 8px;
+    right: 8px;
+  }
+
+
+  .notificationHeader {
+    gap: 7px;
+  }
+
+
+  .notificationTitleArea {
+    gap: 8px;
+  }
+
+
+  .notificationTitleIcon {
+    width: 32px;
+    height: 32px;
+  }
+
+
+  .notificationHeaderActions {
+    gap: 4px;
+  }
+
+
+  .notificationClose,
+  .expandNotificationButton {
+    width: 31px;
+    height: 31px;
+  }
+
+
+  .notificationItem {
+    padding: 9px;
+  }
+
+}
+
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes notificationAppear {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(-8px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0) scale(1);
+  }
+
+}
+
+
+@keyframes notificationExpand {
+
+  from {
+    opacity: 0;
+
+    transform:
+      scale(0.96) translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      scale(1) translateY(0);
+  }
+
+}
