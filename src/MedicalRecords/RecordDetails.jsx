@@ -504,14 +504,14 @@ function Records() {
             <h2>  <FileText size={21} />  Medical Record History</h2>
             <p> View and manage medical information recorded for this patient. </p>
           </div>
-          <button className={HM.newRecordButton} type="button"><Plus size={18} />New Medical Record  </button>
+          <button className={HM.newRecordButton}   onClick={() => { document.getElementById("medical-record-form")?.scrollIntoView({ behavior: "smooth", block: "start" }); }} type="button"><Plus size={18} />New Medical Record  </button>
         </div>
         {/* SEARCH */}
         <div className={HM.recordSearch}>
           <Search size={18} />
           <input type="text" placeholder="Search this patient's records..." />
         </div>
-        {/* FILTERS */}
+        {/* FILTERS
         <div className={HM.recordFilters}>
           <div className={HM.filterItem}>
             <label>Month</label>
@@ -597,7 +597,7 @@ function Records() {
             Apply
           </button>
 
-        </div>
+        </div> */}
 
       </section>
 

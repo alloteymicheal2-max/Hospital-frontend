@@ -72,32 +72,12 @@ function Settings() {
 
   async function handleSaveChanges(e) {
     e.preventDefault()
-   console.log("========== SAVING SETTINGS ==========");
-    console.log("SETTINGS OBJECT:", settings);
-    console.log("SETTINGS ID:", settings.id);
-    console.log("PUT URL:", `${API}/settings/${settings.id}`);
 
    setIsSaving(true)
     try {
-
-  console.log("EMAIL:", settings.email_notification);
-  console.log("APPOINTMENT:", settings.appointment_reminders);
-  console.log("PATIENT ALERTS:", settings.patients_alerts);
-
-
-  console.log("🔥 DATA BEING SENT TO BACKEND:", {
-    email_notification: settings.email_notification,
-    appointment_reminders: settings.appointment_reminders,
-    patients_alerts: settings.patients_alerts
-});
-
       const response = await axios.put(`${API}/settings/${settings.id}`, settings)
-      console.log("🔥 BACKEND SAVED DATA:", {
-    email_notification: response.data.data.email_notification,
-    appointment_reminders: response.data.data.appointment_reminders,
-    patients_alerts: response.data.data.patients_alerts
-});
-      // console.log("BACKEND RESPONSEEEE:", response.data)
+
+      console.log("BACKEND RESPONSEEEE:", response.data)
       const result = response.data
 
       if (result.success === true) {
@@ -128,28 +108,9 @@ function Settings() {
 
   async function fetchSettings() {
     try {
-             
-    const settingsURL = `${API}/settings`;
-
-        console.log("================================");
-        console.log("SETTINGS API URL:", settingsURL);
-
-
       const response = await axios.get(`${API}/settings`)
-
-       console.log("SETTINGS FULL RESPONSE:", response);
-        console.log("SETTINGS RESPONSE DATA:", response.data);
-        console.log("SETTINGS DATA ARRAY:", response.data.data);
-
       const result = response.data
-
-   console.log("SETTINGS FROM BACKEND:", result.data);
-
       if (result.success === true && result.data.length > 0) {
-
-  console.log("🔥 SETTING RECORD RECEIVED:", result.data[0]);
-    console.log("🔥 SETTING ID RECEIVED:", result.data[0].id);
-
         setSettings(result.data[0])
         setServerUnavailable(false)
       }

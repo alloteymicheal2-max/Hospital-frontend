@@ -44,6 +44,27 @@ function Header() {
   })
 
 
+async function handleclick(notification) {
+
+
+  markAsRead(notification.id);
+
+  setNotificationOpen(false);
+
+  const type = notification.type.trim();
+
+  if (type === "patient") {
+    navigate("/hospital/patients");
+  } 
+  else if (type === "Medical record") {
+    navigate("/hospital/medical-records");
+  } 
+  else {
+    console.log("NO MATCHING TYPE:", type);
+  }
+}
+
+
   async function fetchNotifications() {
     try {
       const user = JSON.parse(localStorage.getItem("user"));
@@ -161,7 +182,7 @@ function Header() {
 
   return (
     <>
-      <header className={`${HM.header} ${menuOpen ? HM.headerOpen : ""} ${active100? HM.hideH:""}`}>
+      <header className={`${HM.header} ${menuOpen ? HM.headerOpen : ""} ${active100 ? HM.hideH : ""}`}>
         <Link to="/hospital/dashboard" className={HM.logoArea} onClick={closeMobileMenu} >
           <div className={HM.logoIcon}>    <HeartPulse size={21} onClick={() => navigate("/hospital/dashboard")} /></div>
           <div className={HM.logoText}>
@@ -222,7 +243,7 @@ function Header() {
                 ) : (
                   <div className={HM.notificationList}>
                     {notification.map((notification) => (
-                      <div key={notification.id} className={`${HM.notificationItem} ${notification.is_read ? HM.notificationRead : HM.notificationUnread}`} onClick={() => markAsRead(notification.id)} >
+                      <div key={notification.id} className={`${HM.notificationItem} ${notification.is_read ? HM.notificationRead : HM.notificationUnread}`} onClick={() => handleclick(notification)} >
                         <div className={HM.notificationItemIcon}>{notification.is_read ? (<Bell size={17} />) : (<div className={HM.unreadNotificationIcon}> <Bell size={17} /> </div>)}  </div>
                         <div className={HM.notificationItemContent}>
                           <div className={HM.notificationItemTop}>

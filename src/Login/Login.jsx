@@ -1,4 +1,3 @@
-import React from "react";
 import { HeartPulse, ShieldCheck, Activity, Users, LockKeyhole, Mail, Eye, ArrowRight, CheckCircle2, Headphones, FastForward, Flashlight, EyeOff, } from "lucide-react";
 
 import axios from "axios"

@@ -186,6 +186,7 @@ Later fetch notifications for that user
       if (result.success === true) {
         setPatients(result.data);
         setServerUnavailable(false)
+       
       } else {
         console.log("PATIENT API MESSAGE:", result.message);
       }
@@ -193,8 +194,15 @@ Later fetch notifications for that user
     } catch (error) {
       console.log("PATIENT ERROR STATUS:", error.response?.status);
       setServerUnavailable(error.response ? false : true)
+
+      if (error.response?.status === 401) {
+        window.location.href = "/login"
+        localStorage.removeItem('token')
+     
+      }
     }
   }
+
 
 
   async function handleViewPatient(patient) {
@@ -542,7 +550,7 @@ Later fetch notifications for that user
                             {patient.first_name} {patient.last_name}
                           </strong>
                           <span>
-                            {patient.date_of_birth}
+                            {/* {patient.date_of_birth} */}
                           </span>
                         </div>
                       </div>
